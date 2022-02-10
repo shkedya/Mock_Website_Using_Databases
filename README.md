@@ -1,1 +1,1 @@
-"# This will be what the database client-side version looks like"
+# This will be what the database client-side version looks like
