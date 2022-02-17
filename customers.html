@@ -26,8 +26,52 @@
   <section class="myHeader" id="myHeader">
 	  <h2 class="myHeader_header">Customers</h2>
   </section>
-<center><p><a href="customers_table.html" title="New Customer" target="_top">Click to Add a New Customer</a>
-</p></center></div>
+  <table class=database_table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th >Badges</th>
+      <th> Gender</th>
+    </tr>
+    <tr>
+      <td>#1234</td>
+      <td>Peyton</td>
+      <td>(555) 123-4567</td>
+      <td>8</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <td>#5678</td>
+      <td>Alon</td>
+      <td>(555) 987-6543</td>
+      <td>8</td>
+      <td>Male</td>
+    </tr>
+  </table>
+  <script>
+    function filterTable(){
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      
+    }
+    </script>
+  <center><p>
+    <form action='customers_table.html'>
+      <input type="submit" value="Click to Add a New Customer"/>
+    </form>
+    <form action='customers_update.html'>
+      <input type="submit" value="Click to Update Existing Customer"/>
+    </form>
+      <form action='customers_delete.html'>
+      <input type="submit" value="Click to Delete Customer"/>
+    </form>
+  </p></center>
+  </div>
 <!-- Main Container Ends -->
 </body>
 </html>
