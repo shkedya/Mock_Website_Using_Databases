@@ -26,8 +26,38 @@
   <section class="myHeader" id="myHeader">
 	  <h2 class="myHeader_header">Items</h2>
   </section>
-<center><p><a href="items_table.html" title="New Item" target="_top">Click to Add a New Item</a>
-</p></center></div>
+  <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Search for Items..">
+  <table class=database_table>
+    <tr>
+      <th>ID</th>
+      <th>Price</th>
+      <th>Description</th>
+      <th >Badges Required</th>
+    </tr>
+    <tr>
+      <td>#1</td>
+      <td>200</td>
+      <td>Pokeball</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>#2</td>
+      <td>700</td>
+      <td>Super Potion</td>
+      <td>1</td>
+    </tr>
+  </table>
+  <center><p>
+    <form action='items_table.html'>
+      <input type="submit" value="Click to Add a New Item"/>
+    </form>
+    <form action='items_update.html'>
+      <input type="submit" value="Click to Update Existing Item"/>
+    </form>
+      <form action='items_delete.html'>
+      <input type="submit" value="Click to Delete Item"/>
+    </form>
+  </p></center>
 <!-- Main Container Ends -->
 </body>
 </html>

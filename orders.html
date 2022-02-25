@@ -26,8 +26,29 @@
   <section class="myHeader" id="myHeader">
 	  <h2 class="myHeader_header">Orders</h2>
   </section>
-<center><p><a href="orders_table.html" title="New Order" target="_top">Click to Add a New Order</a>
-</p></center></div>
+  <table class=database_table>
+    <tr>
+      <th>Order ID</th>
+      <th>Customer ID</th>
+      <th>Item ID</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th>Total</th>
+    </tr>
+    <tr>
+      <td>#100</td>
+      <td>#1234</td>
+      <td>#2</td>
+      <td>1</td>
+      <td>2/15/2022</td>
+      <td>700</td>
+    </tr>
+  </table>
+  <center><p>
+    <form action='orders_table.html'>
+      <input type="submit" value="Click to Add a New Order"/>
+    </form>
+  </p></center>
 <!-- Main Container Ends -->
 </body>
 </html>

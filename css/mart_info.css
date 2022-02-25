@@ -1,6 +1,8 @@
 @charset "UTF-8";
 /* Body */
 * {box-sizing: border-box}
+
+
 body {
 	font-family: source-sans-pro;
 	background-color: #f2f2f2;
@@ -76,6 +78,26 @@ ul li:hover a {
 	background-color: #8ED1E3;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+table.database_table {
+	table-layout: auto;
+}
+table.database_table th{
+	color: black;
+	font-size: 20px;
+	text-align: center;
+	width: 1px;
+    white-space: nowrap
+}
+table.database_table td{
+	color:black;
+	font-size: 15px;
+	text-align: center;
+	border-style: solid;
+	border: 1px solid black;
+	padding: 15px;
+	width: 1px;
+    white-space: nowrap
 }
 th{
 	color:darkturquoise;
