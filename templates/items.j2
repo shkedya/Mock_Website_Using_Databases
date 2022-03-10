@@ -1,9 +1,10 @@
 <!doctype html>
+
 <html lang="en-US">
 <head>
 <meta charset="utf-8">
 <title>Poké Mart</title>
-<link href="./css/mart_info.css" rel="stylesheet" type="text/css">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mart_info.css') }}">
 </head>
 
 <body>
@@ -24,39 +25,40 @@
     </nav>
   </header>
   <section class="myHeader" id="myHeader">
-	  <h2 class="myHeader_header">Customers</h2>
+	  <h2 class="myHeader_header">Items</h2>
   </section>
   <table class=database_table>
-    <tr>
+    <thead>
       <th>ID</th>
-      <th>Name</th>
-      <th>Phone Number</th>
-      <th >Badges</th>
-      <th> Gender</th>
-    </tr>
-    <tr>
-      <td>#{{val['Customer_id']}} </td>
-      <td>{{val['Name']}} </td>
-      <td>{{val['Phone_number']}} </td>
-      <td>{{val['Badges']}} </td>
-      <td>{{val['Gender']}} /td>
-    </tr>
+      <th>Price</th>
+      <th>Description Number</th>
+      <th>Badges Required</th>
+    </thead>
+    <tbody>
+      {% for val in item_data %}
+      <tr>
+        <td>#{{val['Item_id']}}</td>
+        <td>{{val['Price']}}</td>
+        <td>{{val['Description']}}</td>
+        <td>{{val['Badge_required']}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
   </table>
 
     <br />
     <h2>Insert</h2>
     <form method = "post">
         <div class="form-group">
-            <label>Name<input type="text" name="Name" value="" /></label>
-            <label>Phone_number<input type="text" name="Phone_number" value="" /></label>
-            <label>Badges<input type="number" name="Badges" value="" /></label>
-            <label>Gender<input type="text" name="Gender" value="" /></label>
-            <input type="submit" name="insert_customer_submit" id="new_Row" value="Insert Customer" class="button"/>
+            <label>Price<input type="Number" name="Price" value="" /></label>
+            <label>Description<input type="text" name="Description" value="" /></label>
+            <label>Badge_required<input type="number" name="Badge_required" value="" /></label>
+            <input type="submit" name="insert_item_submit" id="new_Row" value="Insert Item" class="button"/>
         </div>
-        <form id="insertCustomer">
+        <form id="insertItem">
     </form>
-
     <br />
+  
 
   <script>
     function filterTable(){
@@ -66,11 +68,8 @@
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");
-      
     }
-    </script>
-
-  </div>
+  </script>
 <!-- Main Container Ends -->
 </body>
 </html>

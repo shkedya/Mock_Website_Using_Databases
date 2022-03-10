@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mart_info.css') }}">
+</head>
+
+<body>
+<!-- Main Container -->
+<div class="container"> 
+  <!-- Navigation -->
+  <header> <a href="">
+    <h4 class="logo">POKÉ MART&nbsp;</h4>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="customers.html">CUSTOMERS</a></li>
+		<li><a href="items.html">ITEMS&nbsp;</a></li>
+		<li> <a href="orders.html">ORDERS&nbsp;</a></li>
+        <li> <a href="trades.html">TRADES</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="myHeader" id="myHeader">
+	  <h2 class="myHeader_header">Trades</h2>
+  </section>
+  <table class=database_table>
+    <thead>
+      <th>Trade ID</th>
+      <th>Sender</th>
+      <th>Receiver</th>
+    </thead>
+    <tbody>
+      {% for val in trade_data %}
+      <tr>
+        <td>#{{val['Trade_id']}}
+        <td>#{{val['Sender']}}
+        <td>{{val['Receiver']}}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    <br />
+    <h2>Insert</h2>
+    <form method = "post">
+        <div class="form-group">
+            <label>Sender<input type="number" name="Sender" value="" /></label>
+            <label>Receiver<input type="number" name="Receiver" value="" /></label>
+            <input type="submit" name="insert_trade_submit" id="new_Row" value="Insert Trade" class="button"/>
+        </div>
+        <form id="insertTrade">
+    </form>
+
+    <br />
+
+  <script>
+    function filterTable(){
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    }
+    </script>
+
+  </div>
+<!-- Main Container Ends -->
+</body>
+</html>
