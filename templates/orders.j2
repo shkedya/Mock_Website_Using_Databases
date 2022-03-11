@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<link href="static/styles/mart_info.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!-- Main Container -->
+<div class="container"> 
+  <!-- Navigation -->
+  <header> <a href="">
+    <h4 class="logo">POKÉ MART&nbsp;</h4>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="customers.html">CUSTOMERS</a></li>
+		<li><a href="items.html">ITEMS&nbsp;</a></li>
+		<li> <a href="orders.html">ORDERS&nbsp;</a></li>
+        <li> <a href="trades.html">TRADES</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section class="myHeader" id="myHeader">
+	  <h2 class="myHeader_header">Orders</h2>
+  </section>
+  <table class=database_table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Phone Number</th>
+      <th >Badges</th>
+      <th> Gender</th>
+    </thead>
+    <tbody>
+      {% for val in order_data %}
+      <tr>
+        <td>#{{val['Customer_id']}}
+        <td>{{val['Item_id']}}
+        <td>{{val['Quantity']}}
+        <td>{{val['Date']}}
+        <td>{{val['Total']}}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+    <br />
+    <h2>Insert</h2>
+    <form method = "post">
+        <div class="form-group">
+            <label>Customer_id<input type="number" name="Customer_id" value="" /></label>
+            <label>Item_id<input type="number" name="Item_id" value="" /></label>
+            <label>Quantity<input type="number" name="Quantity" value="" /></label>
+            <label>Total<input type="number" name="Total" value="" /></label>
+            <input type="submit" name="insert_order_submit" id="new_Row" value="Insert Order" class="button"/>
+        </div>
+        <form id="insertOrder">
+    </form>
+
+    <br />
+
+  <script>
+    function filterTable(){
+      // Declare variables
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+    }
+    </script>
+
+  </div>
+<!-- Main Container Ends -->
+</body>
+</html>
